@@ -24,6 +24,8 @@
 			$this->views->getView($this,"categorias",$data);
 		}
 
+
+		//grabar y editar
 		 public function setCategoria(){
             
 			if($_POST){
@@ -95,10 +97,13 @@
 			die();
 		}
 
-		/* public function getCategorias()
+
+		//listar en tabla
+		public function getCategorias()
 		{
 			if($_SESSION['permisosMod']['r']){
 				$arrData = $this->model->selectCategorias();
+
 				for ($i=0; $i < count($arrData); $i++) {
 					$btnView = '';
 					$btnEdit = '';
@@ -115,7 +120,7 @@
 						$btnView = '<button class="btn btn-info btn-sm" onClick="fntViewInfo('.$arrData[$i]['idcategoria'].')" title="Ver categoría"><i class="far fa-eye"></i></button>';
 					}
 					if($_SESSION['permisosMod']['u']){
-						$btnEdit = '<button class="btn btn-primary  btn-sm" onClick="fntEditInfo(this,'.$arrData[$i]['idcategoria'].')" title="Editar categoría"><i class="fas fa-pencil-alt"></i></button>';
+						$btnEdit = '<button class="btn btn-primary  btn-sm" onClick="fntEditInfo('.$arrData[$i]['idcategoria'].')" title="Editar categoría"><i class="fas fa-pencil-alt"></i></button>';
 					}
 					if($_SESSION['permisosMod']['d']){	
 						$btnDelete = '<button class="btn btn-danger btn-sm" onClick="fntDelInfo('.$arrData[$i]['idcategoria'].')" title="Eliminar categoría"><i class="far fa-trash-alt"></i></button>';
@@ -127,6 +132,9 @@
 			die();
 		}
 
+
+		
+		//jalar datos
 		public function getCategoria($idcategoria)
 		{
 			if($_SESSION['permisosMod']['r']){
@@ -147,6 +155,8 @@
 			die();
 		}
 
+
+		/* 
 		public function delCategoria()
 		{
 			if($_POST){

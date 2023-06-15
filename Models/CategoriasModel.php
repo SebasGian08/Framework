@@ -39,6 +39,8 @@
 			return $return;
 		}
 
+
+		//para listar en la tabla
 		public function selectCategorias()
 		{
 			$sql = "SELECT * FROM categoria 
@@ -47,10 +49,10 @@
 			return $request;
 		}
 
+		//para listar en el modal
 		public function selectCategoria(int $idcategoria){
 			$this->intIdcategoria = $idcategoria;
-			$sql = "SELECT * FROM categoria
-					WHERE idcategoria = $this->intIdcategoria";
+			$sql = "SELECT * FROM categoria WHERE idcategoria = $this->intIdcategoria";
 			$request = $this->select($sql);
 			return $request;
 		}

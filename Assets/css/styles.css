@@ -51,31 +51,21 @@
 	height: 50px;
 } 
 
-/* Style foto categoria */
+/* style portada categoría */
 .prevPhoto {
     display: flex;
     justify-content: space-between;
     width: 300px;
     height: 200px;
-    border: 1px dashed #CCC;
-	border-radius: 6px;
+    border: 1px solid #CCC;
     position: relative;
     cursor: pointer;
-    /* background: url(../images/portada_categoria.png); */
-    /* background-repeat: no-repeat; */
+    background: url(../images/uploads/portada_categoria.png);
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     margin: auto;
 }
-
-.prevPhoto:hover {
-	outline: 0px solid transparent;
-	padding: 20px 20px;
-	border: 3px dashed #0198fa;
-	-webkit-transition: all 0.2s ease-in-out;
-	transition: all 0.2s ease-in-out;
-  }
-
 .prevPhoto label{
 	cursor: pointer;
 	width: 100%;
@@ -123,4 +113,12 @@
 }
 .imgProductoDelete{
 	width: 175px;
+}
+
+#imgCategoria{
+	text-align: center;
+}
+#imgCategoria img{
+	width: 200px;
+	margin: auto;
 }

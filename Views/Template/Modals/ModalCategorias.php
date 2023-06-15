@@ -34,15 +34,14 @@
                 </div>
                 <div class="col-md-6">
                     <div class="photo">
-                        <label for="foto">Se recomienda la imagen (570x380)</label>
+                        <label for="foto">Foto (570x380)</label>
                         <div class="prevPhoto">
                           <span class="delPhoto notBlock">X</span>
                           <label for="foto"></label>
                           <div>
-                            <img id="img" src="<?= media(); ?>/images/portada_categoria.png">
+                            <img id="img" src="<?= media(); ?>/images/uploads/portada_categoria.png">
                           </div>
                         </div>
-                        
                         <div class="upimg">
                           <input type="file" name="foto" id="foto">
                         </div>

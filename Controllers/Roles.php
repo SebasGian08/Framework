@@ -16,7 +16,7 @@
 		public function Roles()
 		{
 			if(empty($_SESSION['permisosMod']['r'])){
-				header("Location:".base_url().'/error');
+				header("Location:".base_url().'/dashboard');
 			}
 			$data['page_id'] = 3;
 			$data['page_tag'] = "Roles Usuario";

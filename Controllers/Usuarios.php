@@ -16,7 +16,7 @@
 		public function Usuarios()
 		{
 			if(empty($_SESSION['permisosMod']['r'])){
-				header("Location:".base_url().'/error');
+				header("Location:".base_url().'/dashboard');
 			}
 			$data['page_tag'] = "Usuarios";
 			$data['page_title'] = "Usuarios <small> Tienda Virtual</small>";
