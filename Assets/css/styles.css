@@ -1,0 +1,126 @@
+.headerRegister, .header-primary{
+	background: #009688;
+	color: #FFF;
+}
+.headerUpdate{
+	background: #007bff;
+	color: #FFF;
+	
+}
+
+/* .btn-info {
+	color: #FFF;
+	background-color: #007bff;
+	border-color: #007bff;
+  }
+  
+  .btn-info:hover {
+	color: #FFF;
+	background-color: #003d7e;
+	border-color: #003d7e;
+  } */
+
+ 
+
+  /* Ocultar status del modal ediar */
+  .notBlock{
+	display: none;
+  }
+
+  .required{
+	color: red;
+	font-size: 13pt;
+	font-weight: bold;
+}
+
+/*Estilos cargando login*/
+#divLoading{
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(255, 255, 255, 0.479);
+	z-index: 9999;
+	display: none;
+}
+#divLoading img{
+	width: 50px;
+	height: 50px;
+} 
+
+/* Style foto categoria */
+.prevPhoto {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    height: 200px;
+    border: 1px dashed #CCC;
+	border-radius: 6px;
+    position: relative;
+    cursor: pointer;
+    /* background: url(../images/portada_categoria.png); */
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    background-position: center center;
+    margin: auto;
+}
+
+.prevPhoto:hover {
+	outline: 0px solid transparent;
+	padding: 20px 20px;
+	border: 3px dashed #0198fa;
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+  }
+
+.prevPhoto label{
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+.prevPhoto img{
+	width: 100%;
+	height: 100%;
+}
+.upimg, .notBlock{
+	display: none !important;
+}
+.errorArchivo{
+	font-size: 16px;
+	font-family: arial;
+	color: #cc0000;
+	text-align: center;
+	font-weight: bold; 
+	margin-top: 10px;
+}
+.delPhoto{
+	color: #FFF;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	background: red;
+	position: absolute;
+	right: -10px;
+	top: -10px;
+	z-index: 10;
+}
+#tbl_list_productos img{
+	width: 50px;
+}
+.imgProductoDelete{
+	width: 175px;
+}
