@@ -27,7 +27,7 @@ class Clientes extends Controllers{
 
 	
 	public function setCliente(){
-		/* error_reporting(0); */
+		error_reporting(0);
 		if($_POST){
 			if(empty($_POST['txtIdentificacion']) || empty($_POST['txtNombre']) || empty($_POST['txtApellido']) || 
 			empty($_POST['txtTelefono']) || empty($_POST['txtEmail']) || empty($_POST['txtNit']) || 

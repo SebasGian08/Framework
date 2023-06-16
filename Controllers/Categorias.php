@@ -53,21 +53,22 @@
 					if($intIdcategoria == 0)
 					{
 						//Crear
-						/* if($_SESSION['permisosMod']['w']){ */
+						if($_SESSION['permisosMod']['w']){
 							$request_categoria = $this->model->insertCategoria($strCategoria, $strDescipcion,$imgPortada,$intStatus);
 							$option = 1;
-						/* } */
+						}
 					}else{
 						//Actualizar
-						/* if($_SESSION['permisosMod']['u']){
+						if($_SESSION['permisosMod']['u']){
 							if($nombre_foto == ''){
 								if($_POST['foto_actual'] != 'portada_categoria.png' && $_POST['foto_remove'] == 0 ){
 									$imgPortada = $_POST['foto_actual'];
 								}
-							} */
-							$request_categoria = $this->model->updateCategoria($intIdcategoria,$strCategoria, $strDescipcion,$imgPortada,$intStatus);
+							}
+							$request_categoria = $this->model->updateCategoria($intIdcategoria,$strCategoria, $strDescipcion,
+							$imgPortada,$intStatus);
 							$option = 2;
-						/* } */
+						}
 					}
 					if($request_categoria > 0 )
 					{
@@ -77,12 +78,12 @@
 							if($nombre_foto != ''){ uploadImage($foto,$imgPortada); }
 						}else{
 							$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
-							/* if($nombre_foto != ''){ uploadImage($foto,$imgPortada); } */
+							if($nombre_foto != ''){ uploadImage($foto,$imgPortada); }
 
-							/* if(($nombre_foto == '' && $_POST['foto_remove'] == 1 && $_POST['foto_actual'] != 'portada_categoria.png')
+							if(($nombre_foto == '' && $_POST['foto_remove'] == 1 && $_POST['foto_actual'] != 'portada_categoria.png')
 								|| ($nombre_foto != '' && $_POST['foto_actual'] != 'portada_categoria.png')){
 								deleteFile($_POST['foto_actual']);
-							} */
+							}
 						}
 					}else if($request_categoria == 'exist'){
 						$arrResponse = array('status' => false, 'msg' => '¡Atención! La categoría ya existe.');
@@ -120,7 +121,7 @@
 						$btnView = '<button class="btn btn-info btn-sm" onClick="fntViewInfo('.$arrData[$i]['idcategoria'].')" title="Ver categoría"><i class="far fa-eye"></i></button>';
 					}
 					if($_SESSION['permisosMod']['u']){
-						$btnEdit = '<button class="btn btn-primary  btn-sm" onClick="fntEditInfo('.$arrData[$i]['idcategoria'].')" title="Editar categoría"><i class="fas fa-pencil-alt"></i></button>';
+						$btnEdit = '<button class="btn btn-primary  btn-sm" onClick="fntEditInfo(this,'.$arrData[$i]['idcategoria'].')" title="Editar categoría"><i class="fas fa-pencil-alt"></i></button>';
 					}
 					if($_SESSION['permisosMod']['d']){	
 						$btnDelete = '<button class="btn btn-danger btn-sm" onClick="fntDelInfo('.$arrData[$i]['idcategoria'].')" title="Eliminar categoría"><i class="far fa-trash-alt"></i></button>';
@@ -156,7 +157,7 @@
 		}
 
 
-		/* 
+		
 		public function delCategoria()
 		{
 			if($_POST){
@@ -177,6 +178,8 @@
 			die();
 		}
 
+
+		/* 
 		public function getSelectCategorias(){
 			$htmlOptions = "";
 			$arrData = $this->model->selectCategorias();
