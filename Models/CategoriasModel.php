@@ -40,7 +40,7 @@
 		}
 
 
-		//para listar en la tabla
+		//para listar en la tabla y tambien en productos
 		public function selectCategorias()
 		{
 			$sql = "SELECT * FROM categoria 

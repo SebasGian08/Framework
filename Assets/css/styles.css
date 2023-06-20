@@ -23,14 +23,19 @@
  
 
   /* Ocultar status del modal ediar */
-  .notBlock{
+/*   .notBlock{
 	display: none;
-  }
+  } */
 
   .required{
 	color: red;
 	font-size: 13pt;
 	font-weight: bold;
+}
+
+.textcenter{
+
+	text-align: center;
 }
 
 /*Estilos cargando login*/
@@ -83,7 +88,7 @@
 	width: 100%;
 	height: 100%;
 }
-.upimg, .notBlock{
+.upimg, .notblock{
 	display: none !important;
 }
 .errorArchivo{
