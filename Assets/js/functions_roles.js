@@ -22,6 +22,10 @@ document.addEventListener('DOMContentLoaded', function(){
             {"data":"status"}, 
             {"data":"options"}, 
         ],
+        /* Para centrar */
+            "columnDefs": [
+                        { 'className': "textcenter", "targets": [ 3 ] },
+                         ], 
         "resonsieve":"true",
         "bDestroy": true,
         //las 10 primeros datos

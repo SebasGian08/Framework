@@ -35,7 +35,7 @@
 			return $request;
 		}	
 
-		public function insertProducto(string $nombre, string $descripcion, int $codigo, int $categoriaid, string $precio, int $stock, int $status){
+		public function insertProducto(string $nombre, string $descripcion, string $codigo, int $categoriaid, string $precio, int $stock, int $status){
 			$this->strNombre = $nombre;
 			$this->strDescripcion = $descripcion;
 			$this->intCodigo = $codigo;
@@ -71,7 +71,7 @@
 	        return $return;
 		}
 
-		public function updateProducto(int $idproducto, string $nombre, string $descripcion, int $codigo, int $categoriaid, string $precio, int $stock, int $status){
+		public function updateProducto(int $idproducto, string $nombre, string $descripcion, string $codigo, int $categoriaid, string $precio, int $stock, int $status){
 			$this->intIdProducto = $idproducto;
 			$this->strNombre = $nombre;
 			$this->strDescripcion = $descripcion;

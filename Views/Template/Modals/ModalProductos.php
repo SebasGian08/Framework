@@ -16,7 +16,7 @@
                 <div class="col-md-8">
                     <div class="form-group">
                       <label class="control-label">Nombre Producto <span class="required">*</span></label>
-                      <input class="form-control" id="txtNombre" name="txtNombre" type="text" required="">
+                      <input class="form-control" id="txtNombre" name="txtNombre" type="text" >
                     </div>
                     <div class="form-group">
                       <label class="control-label">Descripción Producto</label>
@@ -27,7 +27,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label class="control-label">Código <span class="required">*</span></label>
-                        <input class="form-control" id="txtCodigo" name="txtCodigo" type="text" placeholder="Código de barra" required="">
+                        <input class="form-control" id="txtCodigo" name="txtCodigo" type="text" placeholder="Código de barra" >
                         <br>
                         <div id="divBarCode" class="notblock textcenter">
                             <div id="printCode">
@@ -40,22 +40,22 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="control-label">Precio <span class="required">*</span></label>
-                            <input class="form-control" id="txtPrecio" name="txtPrecio" type="text" required="">
+                            <input class="form-control valid validNumber" id="txtPrecio" name="txtPrecio" type="text" onkeypress="return controlTag(event);">
                         </div>
                         <div class="form-group col-md-6">
                             <label class="control-label">Stock <span class="required">*</span></label>
-                            <input class="form-control" id="txtStock" name="txtStock" type="text" required="">
+                            <input class="form-control valid validNumber" id="txtStock" name="txtStock" type="text" onkeypress="return controlTag(event);">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="listCategoria">Categoría <span class="required">*</span></label>
-                            <select class="form-control" data-live-search="true" id="listCategoria" name="listCategoria" required=""></select>
+                            <select class="form-control" data-live-search="true" id="listCategoria" name="listCategoria" ></select>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="listStatus">Estado <span class="required">*</span></label>
-                            <select class="form-control selectpicker" id="listStatus" name="listStatus" required="">
+                            <select class="form-control selectpicker" id="listStatus" name="listStatus" >
                               <option value="1">Activo</option>
                               <option value="2">Inactivo</option>
                             </select>
@@ -73,6 +73,7 @@
                 </div>
               </div>
               
+              <!-- Imagen -->
               <div class="tile-footer">
                  <div class="form-group col-md-12">
                      <div id="containerGallery">
@@ -83,9 +84,9 @@
                      </div>
                      <hr>
                      <div id="containerImages">
-                         <!-- <div id="div24">
+                         <div id="div24">
                              <div class="prevImage">
-                                 <img src="<?= media(); ?>/images/uploads/producto1.jpg">
+                                 <img src="<?= media(); ?>/images/image1.png">
                              </div>
                              <input type="file" name="foto" id="img1" class="inputUploadfile">
                              <label for="img1" class="btnUploadfile"><i class="fas fa-upload "></i></label>
@@ -98,12 +99,13 @@
                              <input type="file" name="foto" id="img1" class="inputUploadfile">
                              <label for="img1" class="btnUploadfile"><i class="fas fa-upload "></i></label>
                              <button class="btnDeleteImage" type="button" onclick="fntDelItem('div24')"><i class="fas fa-trash-alt"></i></button>
-                         </div> -->
+                         </div>
                         
                      </div>
                  </div>
                                 
               </div>
+              <!-- Imagen -->
             </form>
       </div>
     </div>

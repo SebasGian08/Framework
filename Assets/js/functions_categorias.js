@@ -20,6 +20,11 @@ document.addEventListener('DOMContentLoaded', function(){
             {"data":"status"},
             {"data":"options"}
         ],
+        /* Para centrar */
+        "columnDefs": [
+                        { 'className': "textcenter", "targets": [ 2 ] },
+                        { 'className': "textcenter", "targets": [ 3 ] },
+                      ], 
         'dom': 'lBfrtip',
         'buttons': [
             {

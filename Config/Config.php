@@ -19,7 +19,7 @@
 	const SPM = ",";
 
 	//Simbolo de moneda
-	const SMONEY = "Q";
+	const SMONEY = "S/ ";
 
 	//Datos envio de correo
 	//NOMBRE DE LA EMPRESA EN LA QUE SE ESTA DESARROLLAND
