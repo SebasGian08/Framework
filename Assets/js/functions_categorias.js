@@ -267,7 +267,7 @@ function fntDelInfo(idcategoria){
 
 function removePhoto(){
     document.querySelector('#foto').value ="";
-    document.querySelector('.delPhoto').classList.add("notBlock");
+    document.querySelector('.delPhoto').classList.remove("notBlock");
     if(document.querySelector('#img')){
         document.querySelector('#img').remove();
     }

@@ -140,6 +140,8 @@
 	        return $request_insert;
 		}
 
+
+		/* traer datos al moda para traer imagenes */
 		public function selectImages(int $idproducto){
 			$this->intIdProducto = $idproducto;
 			$sql = "SELECT productoid,img
