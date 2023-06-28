@@ -286,7 +286,7 @@ function fntViewInfo(idProducto){
 
 function fntEditInfo(element,idProducto){
     rowTable = element.parentNode.parentNode.parentNode;
-    /* cambiar apariencia al modal editar  */
+    /* cambiar apariencia al modal editar*/
     document.querySelector('#titleModal').innerHTML ="Actualizar Producto";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
