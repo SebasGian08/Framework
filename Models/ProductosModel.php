@@ -151,6 +151,8 @@
 			return $request;
 		}
 
+
+		/* metodo para eliminar imagen del modal */
 		public function deleteImage(int $idproducto, string $imagen){
 			$this->intIdProducto = $idproducto;
 			$this->strImagen = $imagen;

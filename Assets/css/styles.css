@@ -151,8 +151,8 @@
 }
 .prevImage{
 	border: 2px dashed #CCC;
-	width: 120px;
-	height: 148px;
+	width: 220px;
+	height: 248px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -178,8 +178,15 @@
 	width: 100%;
 }
 .btnDeleteImage{
-	background-color: #dc3545;
+	background-color: #000000;
 }
+
+.btnDeleteImage:hover{
+	background-color: red;
+	color: white;
+	box-shadow: 2px 5px 5px #6b6b6b;
+}
+
 .prevImage .loading{
 	width: 30px;
 	height: 30px;

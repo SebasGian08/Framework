@@ -126,7 +126,20 @@ window.addEventListener('load', function() {
                         swal("", objData.msg ,"success");
                         document.querySelector("#idProducto").value = objData.idproducto;
                         document.querySelector("#containerGallery").classList.remove("notblock");
-                        tableProductos.api().ajax.reload();
+
+                        if(rowTable == ""){
+                            tableProductos.api().ajax.reload();
+                        }else{
+                           htmlStatus = intStatus == 1 ? 
+                            '<span class="badge badge-success">Activo</span>' : 
+                            '<span class="badge badge-danger">Inactivo</span>';
+                            rowTable.cells[1].textContent = intCodigo;
+                            rowTable.cells[2].textContent = strNombre;
+                            rowTable.cells[3].textContent = intStock;
+                            rowTable.cells[4].textContent = smony+strPrecio;
+                            rowTable.cells[5].innerHTML =  htmlStatus;
+                            rowTable = ""; 
+                        }
                     }else{
                         swal("Error", objData.msg , "error");
                     }
@@ -228,6 +241,7 @@ function fntInputFile(){
                                 document.querySelector("#"+parentId+" .btnDeleteImage").setAttribute("imgname",objData.imgname);
                                 document.querySelector("#"+parentId+" .btnUploadfile").classList.add("notblock");
                                 document.querySelector("#"+parentId+" .btnDeleteImage").classList.remove("notblock");
+                                swal("Exitoso", objData.msg , "success");
                             }else{
                                 swal("Error", objData.msg , "error");
                             }
@@ -241,105 +255,174 @@ function fntInputFile(){
     });
 }
 
-/* ver en un modal */
-function fntViewInfo(idProducto){
-    let request = (window.XMLHttpRequest) ? 
-                    new XMLHttpRequest() : 
-                    new ActiveXObject('Microsoft.XMLHTTP');
-    let ajaxUrl = base_url+'/Productos/getProducto/'+idProducto;
-    request.open("GET",ajaxUrl,true);
-    request.send();
-    request.onreadystatechange = function(){
-        if(request.readyState == 4 && request.status == 200){
-            let objData = JSON.parse(request.responseText);
-            if(objData.status)
-            {
-                let htmlImage = "";
-                let objProducto = objData.data;
-                let estadoProducto = objProducto.status == 1 ? 
-                '<span class="badge badge-success">Activo</span>' : 
-                '<span class="badge badge-danger">Inactivo</span>';
+    function fntDelItem(element){
+                let nameImg = document.querySelector(element+' .btnDeleteImage').getAttribute("imgname");
+                let idProducto = document.querySelector("#idProducto").value;
+                let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+                let ajaxUrl = base_url+'/Productos/delFile'; 
 
-                document.querySelector("#celCodigo").innerHTML = objProducto.codigo;
-                document.querySelector("#celNombre").innerHTML = objProducto.nombre;
-                document.querySelector("#celPrecio").innerHTML = objProducto.precio;
-                document.querySelector("#celStock").innerHTML = objProducto.stock;
-                document.querySelector("#celCategoria").innerHTML = objProducto.categoria;
-                document.querySelector("#celStatus").innerHTML = estadoProducto;
-                document.querySelector("#celDescripcion").innerHTML = objProducto.descripcion;
-
-                if(objProducto.images.length > 0){
-                    let objProductos = objProducto.images;
-                    for (let p = 0; p < objProductos.length; p++) {
-                        htmlImage +=`<img src="${objProductos[p].url_image}"></img>`;
+                let formData = new FormData();
+                formData.append('idproducto',idProducto);
+                formData.append("file",nameImg);
+                request.open("POST",ajaxUrl,true);
+                request.send(formData);
+                request.onreadystatechange = function(){
+                    if(request.readyState != 4) return;
+                    if(request.status == 200){
+                        let objData = JSON.parse(request.responseText);
+                        if(objData.status)
+                        {
+                            let itemRemove = document.querySelector(element);
+                            itemRemove.parentNode.removeChild(itemRemove);
+                            swal("Exitoso", objData.msg , "success");
+                        }else{
+                            swal("", objData.msg , "error");
+                        }
                     }
                 }
-                document.querySelector("#celFotos").innerHTML = htmlImage;
-                $('#modalViewProducto').modal('show');
-
-            }else{
-                swal("Error", objData.msg , "error");
-            }
-        }
-    } 
-}
-
-function fntEditInfo(element,idProducto){
-    rowTable = element.parentNode.parentNode.parentNode;
-    /* cambiar apariencia al modal editar*/
-    document.querySelector('#titleModal').innerHTML ="Actualizar Producto";
-    document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
-    document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
-    document.querySelector('#btnText').innerHTML ="Actualizar";
-    let request = (window.XMLHttpRequest) ? 
-                    new XMLHttpRequest() : 
-                    new ActiveXObject('Microsoft.XMLHTTP');
-    let ajaxUrl = base_url+'/Productos/getProducto/'+idProducto;
-    request.open("GET",ajaxUrl,true);
-    request.send();
-    request.onreadystatechange = function(){
-        if(request.readyState == 4 && request.status == 200){
-            let objData = JSON.parse(request.responseText);
-            if(objData.status)
-            {
-                let htmlImage = "";
-                let objProducto = objData.data;
-                document.querySelector("#idProducto").value = objProducto.idproducto;
-                document.querySelector("#txtNombre").value = objProducto.nombre;
-                document.querySelector("#txtDescripcion").value = objProducto.descripcion;
-                document.querySelector("#txtCodigo").value = objProducto.codigo;
-                document.querySelector("#txtPrecio").value = objProducto.precio;
-                document.querySelector("#txtStock").value = objProducto.stock;
-                document.querySelector("#listCategoria").value = objProducto.categoriaid;
-                document.querySelector("#listStatus").value = objProducto.status;
-                tinymce.activeEditor.setContent(objProducto.descripcion); 
-                
-                $('#listCategoria').selectpicker('render');
-                $('#listStatus').selectpicker('render');
-                fntBarcode();
-
-                if(objProducto.images.length > 0){
-                    let objProductos = objProducto.images;
-                    for (let p = 0; p < objProductos.length; p++) {
-                        let key = Date.now()+p;
-                        htmlImage +=`<div id="div${key}">
-                            <div class="prevImage">
-                            <img src="${objProductos[p].url_image}"></img>
-                            </div>
-                            <button type="button" class="btnDeleteImage" onclick="fntDelItem('#div${key}')" imgname="${objProductos[p].img}">
-                            <i class="fas fa-trash-alt"></i></button></div>`;
-                    }
-                }
-                document.querySelector("#containerImages").innerHTML = htmlImage; 
-                document.querySelector("#divBarCode").classList.remove("notblock");
-                document.querySelector("#containerGallery").classList.remove("notblock");           
-                $('#modalFormProductos').modal('show');
-            }else{
-                swal("Error", objData.msg , "error");
-            }
-        }
     }
-}
+
+
+        /* ver en un modal */
+        function fntViewInfo(idProducto){
+            let request = (window.XMLHttpRequest) ? 
+                            new XMLHttpRequest() : 
+                            new ActiveXObject('Microsoft.XMLHTTP');
+            let ajaxUrl = base_url+'/Productos/getProducto/'+idProducto;
+            request.open("GET",ajaxUrl,true);
+            request.send();
+            request.onreadystatechange = function(){
+                if(request.readyState == 4 && request.status == 200){
+                    /* Convetir a objeto */
+                    let objData = JSON.parse(request.responseText);
+                    if(objData.status)
+                    {
+                        let htmlImage = "";
+                        let objProducto = objData.data;
+                        let estadoProducto = objProducto.status == 1 ? 
+                        '<span class="badge badge-success">Activo</span>' : 
+                        '<span class="badge badge-danger">Inactivo</span>';
+
+                        document.querySelector("#celCodigo").innerHTML = objProducto.codigo;
+                        document.querySelector("#celNombre").innerHTML = objProducto.nombre;
+                        document.querySelector("#celPrecio").innerHTML = objProducto.precio;
+                        document.querySelector("#celStock").innerHTML = objProducto.stock;
+                        document.querySelector("#celCategoria").innerHTML = objProducto.categoria;
+                        document.querySelector("#celStatus").innerHTML = estadoProducto;
+                        document.querySelector("#celDescripcion").innerHTML = objProducto.descripcion;
+
+                        if(objProducto.images.length > 0){
+                            let objProductos = objProducto.images;
+                            for (let p = 0; p < objProductos.length; p++) {
+                                htmlImage +=`<img src="${objProductos[p].url_image}"></img>`;
+                            }
+                        }
+                        document.querySelector("#celFotos").innerHTML = htmlImage;
+                        $('#modalViewProducto').modal('show');
+
+                    }else{
+                        swal("Error", objData.msg , "error");
+                    }
+                }
+            } 
+        }
+
+            function fntEditInfo(element,idProducto){
+                rowTable = element.parentNode.parentNode.parentNode;
+                /* cambiar apariencia al modal editar*/
+                document.querySelector('#titleModal').innerHTML ="Actualizar Producto";
+                document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
+                document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
+                document.querySelector('#btnText').innerHTML ="Actualizar";
+                let request = (window.XMLHttpRequest) ? 
+                                new XMLHttpRequest() : 
+                                new ActiveXObject('Microsoft.XMLHTTP');
+                let ajaxUrl = base_url+'/Productos/getProducto/'+idProducto; 
+                request.open("GET",ajaxUrl,true);
+                request.send();
+                request.onreadystatechange = function(){
+                    if(request.readyState == 4 && request.status == 200){
+                        let objData = JSON.parse(request.responseText);
+                        if(objData.status)
+                        {
+                            let htmlImage = "";
+                            let objProducto = objData.data;
+                            document.querySelector("#idProducto").value = objProducto.idproducto;
+                            document.querySelector("#txtNombre").value = objProducto.nombre;
+                            document.querySelector("#txtDescripcion").value = objProducto.descripcion;
+                            document.querySelector("#txtCodigo").value = objProducto.codigo;
+                            document.querySelector("#txtPrecio").value = objProducto.precio;
+                            document.querySelector("#txtStock").value = objProducto.stock;
+                            document.querySelector("#listCategoria").value = objProducto.categoriaid;
+                            document.querySelector("#listStatus").value = objProducto.status;
+                            /* descripcion */
+                            tinymce.activeEditor.setContent(objProducto.descripcion); 
+                            
+                            $('#listCategoria').selectpicker('render');
+                            $('#listStatus').selectpicker('render');
+                            fntBarcode();
+
+                            if(objProducto.images.length > 0){
+                                let objProductos = objProducto.images;
+                                for (let p = 0; p < objProductos.length; p++) {
+                                    let key = Date.now()+p;
+                                    htmlImage +=`<div id="div${key}">
+                                        <div class="prevImage">
+                                        <img src="${objProductos[p].url_image}"></img>
+                                        </div>
+                                        <button type="button" class="btnDeleteImage" onclick="fntDelItem('#div${key}')" imgname="${objProductos[p].img}">
+                                        <i class="fas fa-trash-alt"></i></button></div>`;
+                                }
+                            }
+                            document.querySelector("#containerImages").innerHTML = htmlImage; 
+                            document.querySelector("#divBarCode").classList.remove("notblock");
+                            document.querySelector("#containerGallery").classList.remove("notblock");           
+                            $('#modalFormProductos').modal('show');
+                        }else{
+                            swal("Error", objData.msg , "error");
+                        }
+                    }
+                }
+            }
+
+        function fntDelInfo(idProducto){
+            swal({
+                title: "Eliminar Producto",
+                text: "¿Realmente quiere eliminar el producto?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Si, eliminar!",
+                cancelButtonText: "No, cancelar!",
+                closeOnConfirm: false,
+                closeOnCancel: true
+            }, function(isConfirm) {
+                
+                if (isConfirm) 
+                {
+                    let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+                    let ajaxUrl = base_url+'/Productos/delProducto';
+                    let strData = "idProducto="+idProducto;
+                    request.open("POST",ajaxUrl,true);
+                    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    request.send(strData);
+                    request.onreadystatechange = function(){
+                        if(request.readyState == 4 && request.status == 200){
+                            let objData = JSON.parse(request.responseText);
+                            if(objData.status)
+                            {
+                                swal("Eliminar!", objData.msg , "success");
+                                /* refrescar la tabla */
+                                tableProductos.api().ajax.reload();
+                            }else{
+                                swal("Atención!", objData.msg , "error");
+                            }
+                        }
+                    }
+                }
+
+            });
+
+        }
 
 
 
