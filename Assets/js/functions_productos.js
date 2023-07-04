@@ -104,8 +104,8 @@ window.addEventListener('load', function() {
                 swal("Atención", "Todos los campos son obligatorios." , "error");
                 return false;
             }
-            if(intCodigo.length < 2){
-                swal("Atención", "El código debe ser mayor que 2 dígitos." , "error");
+            if(intCodigo.length <= 5){
+                swal("Atención", "El código debe ser mayor que 5 dígitos." , "error");
                 return false;
             }
             divLoading.style.display = "flex";

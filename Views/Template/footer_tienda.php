@@ -144,13 +144,32 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</footer>
 
 
-	<!-- Back to top -->
-	<div class="btn-back-to-top" id="myBtn">
+	<!-- Icono para subir -->
+	<!-- <div class="btn-back-to-top" id="myBtn">
 		<span class="symbol-btn-back-to-top">
 			<i class="zmdi zmdi-chevron-up"></i>
 		</span>
-	</div>
+	</div> -->
 
+	<!-- CHATBOT -->
+			<script>
+			window.addEventListener('mouseover', initLandbot, { once: true });
+			window.addEventListener('touchstart', initLandbot, { once: true });
+			var myLandbot;
+			function initLandbot() {
+			if (!myLandbot) {
+				var s = document.createElement('script');s.type = 'text/javascript';s.async = true;
+				s.addEventListener('load', function() {
+				var myLandbot = new Landbot.Livechat({
+					configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-1628727-26OW2MPOWLZRILB9/index.json',
+				});
+				});
+				s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
+				var x = document.getElementsByTagName('script')[0];
+				x.parentNode.insertBefore(s, x);
+			}
+			}
+			</script>
 
 <!--===============================================================================================-->	
 	<script src="<?= media() ?>/tienda/vendor/jquery/jquery-3.2.1.min.js"></script>

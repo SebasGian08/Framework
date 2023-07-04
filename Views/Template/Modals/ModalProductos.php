@@ -33,7 +33,7 @@
                             <div id="printCode">
                                 <svg id="barcode"></svg> 
                             </div>
-                            <button class="btn btn-success btn-sm" type="button" onClick="fntPrintBarcode('#printCode')">
+                            <button class="btn btn-primary  btn-sm" type="button" onClick="fntPrintBarcode('#printCode')">
                             <i class="fas fa-print"></i> Imprimir</button>
                         </div>
                     </div>

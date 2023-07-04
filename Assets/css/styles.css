@@ -1,5 +1,5 @@
 .headerRegister, .header-primary{
-	background: #009688;
+	background: #293a61;
 	color: #FFF;
 }
 .headerUpdate{
@@ -178,11 +178,11 @@
 	width: 100%;
 }
 .btnDeleteImage{
-	background-color: #000000;
+	background-color: red;
 }
 
 .btnDeleteImage:hover{
-	background-color: red;
+	background-color: rgb(158, 0, 0);
 	color: white;
 	box-shadow: 2px 5px 5px #6b6b6b;
 }
