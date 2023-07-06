@@ -31,6 +31,8 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?= media() ?>/tienda/vendor/perfect-scrollbar/perfect-scrollbar.css">
 <!--===============================================================================================-->
+
+<link rel="stylesheet" type="text/css" href="<?= media() ?>/tienda/css/adicionales.css">
 	<link rel="stylesheet" type="text/css" href="<?= media() ?>/tienda/css/util.css">
 	<link rel="stylesheet" type="text/css" href="<?= media() ?>/tienda/css/main.css">
 <!--===============================================================================================-->
@@ -45,7 +47,7 @@
 			<div class="top-bar">
 				<div class="content-topbar flex-sb-m h-full container">
 					<div class="left-top-bar">
-						Bienvenido usuario: Carlos Arana
+						Bienvenido usuario: Sebastian Giancarlo
 					</div>
 
 					<div class="right-top-bar flex-w h-full">

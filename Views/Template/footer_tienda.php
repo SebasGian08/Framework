@@ -171,6 +171,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			}
 			</script>
 
+
+	<script src="<?= media() ?>/tienda/js/adicionales.js"></script>
 <!--===============================================================================================-->	
 	<script src="<?= media() ?>/tienda/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->

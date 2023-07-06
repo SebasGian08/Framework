@@ -2340,8 +2340,8 @@ input.num-product::-webkit-inner-spin-button {
 /*//////////////////////////////////////////////////////////////////
 [ L-Text >= 26 ]*/
 .ltext-101 {
-  font-family: Poppins-Regular;
-  font-size: 28px;
+  font-family: sans-serif;
+  font-size: 15px;
   line-height: 1.2857;
 }
 
@@ -3282,7 +3282,7 @@ input.num-product::-webkit-inner-spin-button {
   
   /*---------------------------------------------*/
   .respon2 {
-    font-size: 20px;
+    font-size: 12px;
   }
 
   /*---------------------------------------------*/

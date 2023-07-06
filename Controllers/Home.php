@@ -1,6 +1,8 @@
 <?php 
-
+	require_once("Models/TCategoria.php");
 	class Home extends Controllers{
+		/* PARA EL USO DE LOS TRAIT */
+		use TCategoria;
 		public function __construct()
 		{
 			parent::__construct();
@@ -8,11 +10,12 @@
 
 		public function home()
 		{
-			$data['page_id'] = 1;
-			$data['page_tag'] = "Tienda Virtual";
-			$data['page_title'] = "Página principal";
+			$data['page_tag'] = NOMBRE_EMPRESA;
+			$data['page_title'] = NOMBRE_EMPRESA;
 			$data['page_name'] = "home";
-			$data['page_content'] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, quis. Perspiciatis repellat perferendis accusamus, ea natus id omnis, ratione alias quo dolore tempore dicta cum aliquid corrupti enim deserunt voluptas.";
+			/* CAT _ SLIDER VIENE DE CONFIG PARA QUE SE VEA LOS UNICOS SLIDERS - VARIABLES */
+			$data['slider'] = $this->getCategoriasT(CAT_SLIDER);
+			$data['banner'] = $this->getCategoriasT(CAT_BANNER);
 			$this->views->getView($this,"home",$data);
 		}
 
