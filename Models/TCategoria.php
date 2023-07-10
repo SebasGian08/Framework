@@ -4,6 +4,8 @@ require_once("Libraries/Core/Mysql.php");
 trait TCategoria{
 	private $con;
 
+	/* Mostrar categorias en tienda */
+
 	public function getCategoriasT(string $categorias){
         /* instancia para mysql */
 		$this->con = new Mysql();
