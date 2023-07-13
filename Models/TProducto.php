@@ -8,7 +8,7 @@ trait TProducto{
 	private $cant;
 	private $option;
 
-	/* Mostrar Productos en la tienda */
+	/* Mostrar Productos en la tienda TODOS LOS PRODUCTOS */
 	public function getProductosT(){
 		$this->con = new Mysql();
 		$sql = "SELECT p.idproducto,
@@ -44,6 +44,7 @@ trait TProducto{
 
 	
 
+	/* Traer productos por categoria */
 	public function getProductosCategoriaT(string $categoria){
 		$this->strCategoria = $categoria;
 		$this->con = new Mysql();
@@ -63,7 +64,7 @@ trait TProducto{
 					FROM producto p 
 					INNER JOIN categoria c
 					ON p.categoriaid = c.idcategoria
-					WHERE p.status != 0 AND p.categoriaid = $this->intIdcategoria ";
+					WHERE p.status != 0 AND p.status != 2 AND p.categoriaid = $this->intIdcategoria ";
 					$request = $this->con->select_all($sql);
 					if(count($request) > 0){
 						for ($c=0; $c < count($request) ; $c++) { 

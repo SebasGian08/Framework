@@ -26,7 +26,7 @@
 	const NOMBRE_REMITENTE = "Codware";
 	// CORREO DE LA EMPRESA DONDE LLEGARA
 	const EMAIL_REMITENTE = "no-reply@abelosh.com";
-	const NOMBRE_EMPRESA = "Nombre Empresa";
+	const NOMBRE_EMPRESA = "Tienda Virtual";
 	const WEB_EMPRESA = "www.codware.com";
 	
 
