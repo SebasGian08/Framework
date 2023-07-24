@@ -24,7 +24,7 @@
                           <th>ID</th>
                           <th>Código</th>
                           <th>Nombre</th>
-                          <th>Descripción</th>
+                          <!-- <th>Descripción</th> -->
                           <th>Stock</th>
                           <th>Precio</th>
                           <th>Estado</th>

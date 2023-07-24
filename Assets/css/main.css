@@ -2619,14 +2619,14 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #FFF;
-  background-color: #4181FF;
-  border-color: #4181FF;
+  background-color: #2499e3;
+  border-color: #2499e3;
 }
 
 .btn-primary:hover {
   color: #FFF;
-  background-color: #1e3b74;
-  border-color: #1e3b74;
+  background-color: #1a73aa;
+  border-color: #1a73aa;
 }
 
 .btn-primary:focus, .btn-primary.focus {
@@ -2727,38 +2727,38 @@ fieldset:disabled a.btn {
 
 .btn-info {
   color: #FFF;
-  background-color: #5c5c5c;
-  border-color: #5c5c5c;
+  background-color: #009688;
+  border-color: #009688;
 }
 
 .btn-info:hover {
   color: #FFF;
-  background-color: #8371fd;
-  border-color: #8371fd;
+  background-color: #00645a;
+  border-color: #00645a;
 }
 
 .btn-info:focus, .btn-info.focus {
-  -webkit-box-shadow: 0 0 0 0 #8371fd;
-          box-shadow: 0 0 0 0 #8371fd;
+  -webkit-box-shadow: 0 0 0 0 #00645a;
+          box-shadow: 0 0 0 0 #00645a;
 }
 
 .btn-info.disabled, .btn-info:disabled {
   color: #FFF;
-  background-color: #8371fd;
-  border-color: #8371fd;
+  background-color: #00645a;
+  border-color: #00645a;
 }
 
 .btn-info:not(:disabled):not(.disabled):active, .btn-info:not(:disabled):not(.disabled).active,
 .show > .btn-info.dropdown-toggle {
   color: #FFF;
-  background-color: #8371fd;
-  border-color: #8371fd;
+  background-color: #00645a;
+  border-color: #00645a;
 }
 
 .btn-info:not(:disabled):not(.disabled):active:focus, .btn-info:not(:disabled):not(.disabled).active:focus,
 .show > .btn-info.dropdown-toggle:focus {
-  -webkit-box-shadow: 0 0 0 0 #8371fd;
-          box-shadow: 0 0 0 0 #8371fd;
+  -webkit-box-shadow: 0 0 0 0 #00645a;
+          box-shadow: 0 0 0 0 #00645a;
 }
 
 .btn-warning {
@@ -3491,13 +3491,13 @@ input[type="button"].btn-block {
 .dropdown-item:hover, .dropdown-item:focus {
   color: white;
   text-decoration: none;
-  background-color: #182c47;
+  background-color: #2499e3;
 }
 
 .dropdown-item.active, .dropdown-item:active {
   color: #FFF;
   text-decoration: none;
-  background-color: #009688;
+  background-color: #1c6a9b;
 }
 
 .dropdown-item.disabled, .dropdown-item:disabled {
@@ -14826,7 +14826,7 @@ be a descendant of the grid when it is being dragged.
 
 ::selection {
   color: #FFF;
-  background-color: #00635a;
+  background-color: #2499e3;
 }
 
 @media (min-width: 768px) {
@@ -14865,8 +14865,8 @@ be a descendant of the grid when it is being dragged.
 .app-content {
   min-height: calc(100vh - 50px);
   margin-top: 50px;
-  padding: 30px;
-  background-color: #F2F2F2;
+  padding: 60px;
+  background-color: white;
   -webkit-transition: margin-left 0.3s ease;
   -o-transition: margin-left 0.3s ease;
   transition: margin-left 0.3s ease;
@@ -14922,7 +14922,7 @@ be a descendant of the grid when it is being dragged.
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #182c47;
+  background-color: white;
   z-index: 1030;
   padding-right: 15px;
 }
@@ -14958,8 +14958,9 @@ be a descendant of the grid when it is being dragged.
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
     display: block;
-    width: 230px;
-    background-color: #182c47;
+    border-top-right-radius: 60px 60px;
+    width: 270px;
+    background: linear-gradient(90deg, rgba(35,141,207,1) 0%, rgba(49,175,230,1) 70%, rgba(47,185,245,1) 100%);
   }
 }
 
@@ -14971,7 +14972,7 @@ be a descendant of the grid when it is being dragged.
 .app-sidebar__toggle {
   padding: 0 15px;
   font-family: fontAwesome;
-  color: white;
+  color: #3e3e3e;
   line-height: 2.4;
   -webkit-transition: background-color 0.3s ease;
   -o-transition: background-color 0.3s ease;
@@ -14993,13 +14994,14 @@ be a descendant of the grid when it is being dragged.
 
 .app-sidebar__toggle:focus, .app-sidebar__toggle:hover {
   color: #fff;
-  background-color: #2a3f54;
+  background: linear-gradient(90deg, rgba(35,141,207,1) 0%, rgba(49,175,230,1) 70%, rgba(47,185,245,1) 100%);
   text-decoration: none;
 }
 
 .app-nav {
   display: -webkit-box;
   display: -ms-flexbox;
+  background-color: white;
   display: flex;
   margin-bottom: 0;
   -webkit-box-pack: end;
@@ -15019,14 +15021,14 @@ be a descendant of the grid when it is being dragged.
   display: block;
   padding: 15px;
   line-height: 20px;
-  color: white;
+  color: #3e3e3e;
   -webkit-transition: background-color 0.3s ease;
   -o-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
 }
 
 .app-nav__item:hover, .app-nav__item:focus {
-  background: #2a3f54;
+  background: linear-gradient(90deg, rgba(35,141,207,1) 0%, rgba(49,175,230,1) 70%, rgba(47,185,245,1) 100%);
   color: white;
 }
 
@@ -15157,10 +15159,10 @@ be a descendant of the grid when it is being dragged.
   bottom: 0;
   left: 0;
   padding-top: 70px;
-  width: 230px;
+  width: 270px;
   overflow: auto;
   z-index: 10;
-  background: #2a3f54;
+  background: linear-gradient(90deg, rgba(35,141,207,1) 0%, rgba(49,175,230,1) 70%, rgba(47,185,245,1) 100%);
   -webkit-box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
   -webkit-transition: left 0.3s ease,
@@ -15506,8 +15508,9 @@ be a descendant of the grid when it is being dragged.
 
 .app-title h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
+  color: #5a5a5a;
 }
 
 .app-title p {

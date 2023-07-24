@@ -29,7 +29,7 @@ tableProductos = $('#tableProductos').dataTable( {
         {"data":"idproducto"},
         {"data":"codigo"},
         {"data":"nombre"},
-        {"data":"descripcion"},
+/*         {"data":"descripcion"}, */
         {"data":"stock"},
         {"data":"precio"},
         {"data":"status"},
@@ -37,12 +37,12 @@ tableProductos = $('#tableProductos').dataTable( {
     ],
 
     /* Para centrar */
-    "columnDefs": [
+    "columnDefs":   [
                     { 'className': "textcenter", "targets": [ 3 ] },
                     { 'className': "textcenter", "targets": [ 4 ] },
                     { 'className': "textcenter", "targets": [ 5 ] },
                     { 'className': "textcenter", "targets": [ 6 ] }
-                  ],       
+                    ],       
     'dom': 'lBfrtip',
     'buttons': [
         {
@@ -51,7 +51,7 @@ tableProductos = $('#tableProductos').dataTable( {
             "titleAttr":"Copiar",
             "className": "btn btn-secondary",
             "exportOptions": { 
-                "columns": [ 0, 1, 2, 3, 4, 5, 6] 
+                "columns": [ 0, 1, 2, 3, 4, 5] 
             },
         },{
             "extend": "excelHtml5",
@@ -59,7 +59,7 @@ tableProductos = $('#tableProductos').dataTable( {
             "titleAttr":"Esportar a Excel",
             "className": "btn btn-success",
             "exportOptions": { 
-                "columns": [ 0, 1, 2, 3, 4, 5, 6] 
+                "columns": [ 0, 1, 2, 3, 4, 5] 
             }
         },{
             "extend": "pdfHtml5",
@@ -67,7 +67,7 @@ tableProductos = $('#tableProductos').dataTable( {
             "titleAttr":"Esportar a PDF",
             "className": "btn btn-danger",
             "exportOptions": { 
-                "columns": [ 0, 1, 2, 3, 4, 5, 6] 
+                "columns": [ 0, 1, 2, 3, 4, 5] 
             }
         },{
             "extend": "csvHtml5",
@@ -75,7 +75,7 @@ tableProductos = $('#tableProductos').dataTable( {
             "titleAttr":"Esportar a CSV",
             "className": "btn btn-info",
             "exportOptions": { 
-                "columns": [ 0, 1, 2, 3, 4, 5, 6] 
+                "columns": [ 0, 1, 2, 3, 4, 5] 
             }  
         }
     ],
