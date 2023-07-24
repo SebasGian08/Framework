@@ -9,7 +9,7 @@
 
 	//Datos de conexión a Base de Datos
 	const DB_HOST = "localhost";
-	const DB_NAME = "bd_tiendavirtual";
+	const DB_NAME = "db_tiendavirtual";
 	const DB_USER = "root";
 	const DB_PASSWORD = "";
 	const DB_CHARSET = "utf8";
@@ -30,7 +30,7 @@
 	const WEB_EMPRESA = "www.codware.com";
 	
 
-	const CAT_SLIDER = "1,2";
+	const CAT_SLIDER = "1,2,3,4";
 	const CAT_BANNER = "3,4,5";
 
 
