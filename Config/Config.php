@@ -30,7 +30,7 @@
 	const WEB_EMPRESA = "www.codware.com";
 	
 
-	const CAT_SLIDER = "1,2,3,4";
+	const CAT_SLIDER = "1,2";
 	const CAT_BANNER = "3,4,5";
 
 
