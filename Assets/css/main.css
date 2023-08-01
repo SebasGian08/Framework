@@ -2566,6 +2566,70 @@ textarea.form-control {
   }
 }
 
+.btnAddImage{
+  width: 160px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 0px 15px;
+  background-color: #2499e3;
+  border-radius: 12px;
+  color: white;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition-duration: .2s;
+}
+
+.bell {
+  width: 13px;
+}
+
+.bell path {
+  fill: rgb(0, 206, 62);
+}
+
+.arrow {
+  position: absolute;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnAddImage:hover {
+  background-color: #1e76ad;
+  transition-duration: .2s;
+}
+
+.btnAddImage:hover .arrow {
+  animation: slide-right .6s ease-out both;
+}
+/* arrow animation */
+@keyframes slide-right {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.btnAddImage:active {
+  transform: translate(1px , 1px);
+  transition-duration: .2s;
+}
+
+
+
 .btn {
   display: inline-block;
   font-weight: 700;
@@ -14846,7 +14910,7 @@ be a descendant of the grid when it is being dragged.
     overflow-x: hidden;
   }
   .app .app-sidebar {
-    left: -230px;
+    left: -270px;
   }
   .app .app-sidebar__overlay {
     visibility: hidden;

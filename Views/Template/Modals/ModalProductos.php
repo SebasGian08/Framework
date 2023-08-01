@@ -33,7 +33,7 @@
                             <div id="printCode">
                                 <svg id="barcode"></svg> 
                             </div>
-                            <button class="btn btn-primary  btn-sm" type="button" onClick="fntPrintBarcode('#printCode')">
+                            <button class="btn btn-primary  btn-sm" type="button" onClick="fntPrintBarcode('#printCode')" title="Imprimir Codigo de Barras">
                             <i class="fas fa-print"></i> Imprimir</button>
                         </div>
                     </div>
@@ -78,10 +78,13 @@
                  <div class="form-group col-md-12">
                      <div id="containerGallery">
                          
-                         <button class="btnAddImage btn btn-info btn-sm" type="button">
-                             <i class="fas fa-plus"></i> Agregar foto
+                         <button class="btnAddImage" type="button" title="Añadir Imagenes">
+                         <i class="fa fa-plus-circle bell" aria-hidden="true"></i>
+                         Agregar Foto
+                         <div class="arrow">›</div>
+                         <!-- <i class="fas fa-plus"></i> Agregar foto -->
                          </button>
-                         <span>Se recomienda (440 x 545)</span>
+                         <span style="color:rgb(66, 66, 66);color: #c3c3c3;">Se recomienda (440 x 545)</span>
                      </div>
                      <hr>
                      <div id="containerImages">
@@ -162,7 +165,7 @@
         </table>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" title="Cerrar">Cerrar</button>
       </div>
     </div>
   </div>
