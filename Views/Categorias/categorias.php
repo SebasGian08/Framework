@@ -5,7 +5,7 @@
     <main class="app-content">
       <div class="app-title">
         <div>
-            <h1><i class="fas fa-box-tissue"></i> <?= $data['page_title'] ?>
+            <h1><i class="fa fa-tachometer" aria-hidden="true"></i> <?= $data['page_title'] ?>
               
             </h1>
         </div>

@@ -6,7 +6,7 @@
     <main class="app-content">
       <div class="app-title">
         <div>
-          <h1><i class="fa fa-address-card" aria-hidden="true"></i> <?= $data['page_title'] ?>
+          <h1><i class="fa fa-tachometer" aria-hidden="true"></i> <?= $data['page_title'] ?>
           <!--<button class="btn btn-primary" type="button" onClick="openModal();"><i class="fa fa-plus-circle" aria-hidden="true"></i>Nuevo</button>-->
         
         </h1>

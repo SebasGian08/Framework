@@ -41,12 +41,17 @@
         <span class="app-menu__label">Tienda Virtual</span>
         <i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
+            <li><a class="treeview-item" href="<?= base_url()?>/home"><i class="icon fa fa-circle-o"></i> Ir a tienda</a></li>
             <?php if(!empty($_SESSION['permisos'][4]['r'])){ ?>
             <li><a class="treeview-item" href="<?= base_url()?>/productos"><i class="icon fa fa-circle-o"></i> Productos</a></li>
             <?php } ?>
             <?php if(!empty($_SESSION['permisos'][6]['r'])){ ?>
-            <li><a class="treeview-item" href="<?= base_url()?>/categorias"><i class="icon fa fa-circle-o"></i> Categorias</a></li>
+            <li><a class="treeview-item" href="<?= base_url()?>/categorias"><i class="icon fa fa-circle-o"></i> Tags  - Categorias</a></li>
             <?php } ?>
+            <?php if(!empty($_SESSION['permisos'][7]['r'])){ ?>
+            <li><a class="treeview-item" href="<?= base_url()?>/banners"><i class="icon fa fa-circle-o"></i> Promociones (Banners)</a></li>
+            <?php } ?>
+
           </ul>
         </li>
         <?php } ?>

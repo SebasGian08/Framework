@@ -5,6 +5,7 @@
  	$arrSlider = $data['slider'];
 	$arrBanner = $data['banner'];
 	$arrProductos = $data['productos'];
+	$arrPromociones = $data['promociones'];
 ?>
 
 	<!-- Slider -->
@@ -29,11 +30,12 @@
 								</h2>
 							</div>
 								
-							<div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
+							<!-- boton mas informacion -->
+							<!-- <div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
 								<a href="<?= base_url().'/tienda/categoria/'.$arrSlider[$i]['nombre']; ?>" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
 									Más Información
 								</a>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>
@@ -67,7 +69,7 @@
 						</div>
 					</div>
 				</div> -->
-			<!-- Fin Slider -->
+		<!-- Fin Slider -->
 	</section>
 
 	<!-- Banner -->

@@ -32,7 +32,7 @@
 	<link rel="stylesheet" type="text/css" href="<?= media() ?>/tienda/vendor/perfect-scrollbar/perfect-scrollbar.css">
 <!--===============================================================================================-->
 
-<link rel="stylesheet" type="text/css" href="<?= media() ?>/tienda/css/adicionales.css">
+	<link rel="stylesheet" type="text/css" href="<?= media() ?>/tienda/css/adicionales.css">
 	<link rel="stylesheet" type="text/css" href="<?= media() ?>/tienda/css/util.css">
 	<link rel="stylesheet" type="text/css" href="<?= media() ?>/tienda/css/main.css">
 <!--===============================================================================================-->
@@ -84,6 +84,7 @@
 							<li>
 								<a href="<?= base_url(); ?>/tienda">Tienda</a>
 							</li>
+							
 							<li class="label1" data-label1="nuevo">
 								<a href="<?= base_url(); ?>/carrito">Carrito</a>
 							</li>

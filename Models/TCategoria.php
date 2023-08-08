@@ -19,6 +19,23 @@ trait TCategoria{
 		}
 		return $request;
 	}
+
+	/* Extraer banners a tienda */
+	public function getBannersT(string $banner){
+        /* instancia para mysql */
+		$this->con = new Mysql();
+		$sql = "SELECT idbanner, nombre, descripcion, portada
+				 FROM banners WHERE status != 0 AND status != 2 AND idbanner IN ($banner)";
+		$request = $this->con->select_all($sql);
+		if(count($request) > 0){
+			for ($c=0; $c < count($request) ; $c++) { 
+				$request[$c]['portada'] = BASE_URL.'/Assets/images/uploads/'.$request[$c]['portada'];		
+			}
+		}
+		return $request;
+	}
+
+	
 }
 
  ?>
