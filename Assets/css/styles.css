@@ -131,13 +131,22 @@
 	width: 175px;
 }
 
-#imgCategoria{
+imgCategoria {
 	text-align: center;
 }
 #imgCategoria img{
 	width: 200px;
 	margin: auto;
 }
+
+#imgBanners{
+	text-align: center;
+}
+#imgBanners img{
+	width: 200px;
+	margin: auto;
+}
+
 
 /* Upload fotos*/
 #containerImages{

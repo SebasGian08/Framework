@@ -82,27 +82,14 @@
 		    return $request;			
 		}
 
-		public function deleteBanners(int $idBanners)
-		{
-			$this->intIdBanner = $idBanners;
-			$sql = "SELECT * FROM producto WHERE Bannersid = $this->intIdBanner";
-			$request = $this->select_all($sql);
-			if(empty($request))
-			{
-				$sql = "UPDATE Banners SET status = ? WHERE idBanners = $this->intIdBanner ";
-				$arrData = array(0);
-				$request = $this->update($sql,$arrData);
-				if($request)
-				{
-					$request = 'ok';	
-				}else{
-					$request = 'error';
-				}
-			}else{
-				$request = 'exist';
-			}
-			return $request;
-		}	
+		public function deleteBanner(int $intIdBanner)
+	{
+		$this->intIdBanner = $intIdBanner;
+		$sql = "UPDATE banners SET status = ? WHERE idbanner = $this->intIdBanner  ";
+		$arrData = array(0);
+		$request = $this->update($sql,$arrData);
+		return $request;
+	}
 
 
 	}

@@ -154,7 +154,25 @@
 		}
 
 
-
+		public function delBanner()
+		{
+			if($_POST){
+				if($_SESSION['permisosMod']['d']){
+					$intIdBanner = intval($_POST['idBanner']);
+					$requestDelete = $this->model->deleteBanner($intIdBanner);
+					if($requestDelete == 'ok')
+					{
+						$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado correctamente');
+					}else if($requestDelete == 'exist'){
+						$arrResponse = array('status' => false, 'msg' => 'No es posible eliminar una categoría con productos asociados.');
+					}else{
+						$arrResponse = array('status' => false, 'msg' => 'Error al eliminar la categoría.');
+					}
+					echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
+				}
+			}
+			die();
+		}
 
 
 

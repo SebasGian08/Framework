@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="photo">
-                        <label for="foto" style="color: #c3c3c3;">Se recomienda (570 x 380)</label>
+                        <label for="foto" style="color: #c3c3c3;">Se recomienda (1024 x 720)</label>
                         <div class="prevPhoto">
                           <span class="delPhoto notBlock">X</span>
                           <label for="foto"></label>

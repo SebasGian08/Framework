@@ -6,13 +6,13 @@
 <main class="app-content">
       <div class="row user">
         <div class="col-md-12">
-          <div class="profile">
+         <!--  <div class="profile">
             <div class="info"><img class="user-img" src="<?=media();?>/images/usuario_ico.png">
             <h4><?= $_SESSION['userData']['nombres'].' '.$_SESSION['userData']['apellidos']; ?></h4>
               <p><?= $_SESSION['userData']['nombrerol']; ?></p>
             </div>
             <div class="cover-image"></div>
-          </div>
+          </div> -->
         </div>
         <div class="col-md-3">
       <div class="tile p-0">

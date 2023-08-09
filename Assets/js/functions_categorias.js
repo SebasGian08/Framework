@@ -242,7 +242,7 @@ function fntEditInfo(element,idcategoria){
 function fntDelInfo(idcategoria){
     swal({
         title: "Eliminar Categoría",
-        text: "¿Realmente quiere eliminar al categoría?",
+        text: "¿Realmente quiere eliminar la categoría?",
         type: "warning",
         showCancelButton: true,
         confirmButtonText: "Si, eliminar!",

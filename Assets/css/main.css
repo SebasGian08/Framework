@@ -2022,7 +2022,7 @@ pre code {
   background-color: #FFF;
   background-clip: padding-box;
   border: 2px solid #ced4da;
-  border-radius: 15px;
+  border-radius: 10px;
   -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -2046,7 +2046,7 @@ pre code {
 .form-control:focus {
   color: #495057;
   background-color: #FFF;
-  border-color: #009688;
+  border-color: #2499e3;;
   outline: 0;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -5276,17 +5276,17 @@ input[type="button"].btn-block {
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #009688;
+  color: #b1b1b1;
   background-color: #FFF;
   border: 1px solid #dee2e6;
 }
 
 .page-link:hover {
   z-index: 2;
-  color: #004a43;
+  color: #409EFF;
   text-decoration: none;
-  background-color: #e9ecef;
-  border-color: #dee2e6;
+  /* background-color: #e9ecef; */
+  border-color: #409EFF;
 }
 
 .page-link:focus {
@@ -5309,9 +5309,9 @@ input[type="button"].btn-block {
 
 .page-item.active .page-link {
   z-index: 1;
-  color: #FFF;
-  background-color: #009688;
-  border-color: #009688;
+  color: #409EFF;
+  background-color: #ffffff;
+  border-color: #dddddd;
 }
 
 .page-item.disabled .page-link {
@@ -5319,8 +5319,10 @@ input[type="button"].btn-block {
   pointer-events: none;
   cursor: auto;
   background-color: #FFF;
-  border-color: #dee2e6;
+  border-color: #dddddd;
 }
+
+
 
 .pagination-lg .page-link {
   padding: 0.75rem 1.5rem;

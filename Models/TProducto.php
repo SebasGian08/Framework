@@ -86,6 +86,8 @@ trait TProducto{
 		return $request;
 	}
 
+
+	/* detalle producto */
 	public function getProductoT(string $producto){
 		$this->con = new Mysql();
 		$this->strProducto = $producto;
@@ -100,7 +102,7 @@ trait TProducto{
 				FROM producto p 
 				INNER JOIN categoria c
 				ON p.categoriaid = c.idcategoria
-				WHERE p.status != 0 AND p.nombre = '{$this->strProducto}' ";
+				WHERE p.status != 0 AND p.status != 2 AND p.nombre = '{$this->strProducto}' ";
 				$request = $this->con->select($sql);
 				if(!empty($request)){
 					$intIdProducto = $request['idproducto'];
@@ -118,6 +120,7 @@ trait TProducto{
 		return $request;
 	}
 
+	/* Productos referentes en detalle producto */
 	public function getProductosRandom(int $idcategoria, int $cant, string $option){
 		$this->intIdcategoria = $idcategoria;
 		$this->cant = $cant;
@@ -143,7 +146,7 @@ trait TProducto{
 				FROM producto p 
 				INNER JOIN categoria c
 				ON p.categoriaid = c.idcategoria
-				WHERE p.status != 0 AND p.categoriaid = $this->intIdcategoria
+				WHERE p.status != 0 AND p.status != 2 AND p.categoriaid = $this->intIdcategoria
 				ORDER BY $this->option LIMIT  $this->cant ";
 				$request = $this->con->select_all($sql);
 				if(count($request) > 0){
