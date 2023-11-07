@@ -41,7 +41,7 @@
         <span class="app-menu__label">Tienda Virtual</span>
         <i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-            <li><a class="treeview-item" href="<?= base_url()?>/home"><i class="icon fa fa-circle-o"></i> Ir a tienda</a></li>
+            <li><a class="treeview-item" href="<?= base_url()?>/home" target="_blank"><i class="icon fa fa-circle-o"></i> Ir a tienda</a></li>
             <?php if(!empty($_SESSION['permisos'][4]['r'])){ ?>
             <li><a class="treeview-item" href="<?= base_url()?>/productos"><i class="icon fa fa-circle-o"></i> Productos</a></li>
             <?php } ?>
