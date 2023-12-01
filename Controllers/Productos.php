@@ -77,6 +77,10 @@
 					$intStock = intval($_POST['txtStock']);
 					$intStatus = intval($_POST['listStatus']);
 					$request_producto = "";
+					//FUNCION PARA CONVERTIR TODAS LAS LETRAS A MINUSCULA
+					//CLEAR CADENA PARA DEJAR TODAS LAS LETRAS SIN TILDE Y IGUAL LA Ñ
+					$ruta = strtolower(clear_cadena($strNombre));
+					$ruta = str_replace(" ","-",$ruta);
 
 					if($idProducto == 0)
 					{
@@ -88,6 +92,7 @@
 																		$intCategoriaId,
 																		$strPrecio, 
 																		$intStock, 
+																		$ruta,
 																		$intStatus );
 						}
 					}else{
@@ -100,6 +105,7 @@
 																		$intCategoriaId,
 																		$strPrecio, 
 																		$intStock, 
+																		$ruta,
 																		$intStatus);
 						}
 					}

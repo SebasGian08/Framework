@@ -7,10 +7,9 @@ trait TCategoria{
 	/* Mostrar categorias en tienda */
 
 	public function getCategoriasT(string $categorias){
-        /* instancia para mysql */
 		$this->con = new Mysql();
-		$sql = "SELECT idcategoria, nombre, descripcion, portada
-				 FROM categoria WHERE status != 0 AND status != 2 AND idcategoria IN ($categorias)";
+		$sql = "SELECT idcategoria, nombre, descripcion, portada, ruta
+				 FROM categoria WHERE status != 0 AND idcategoria IN ($categorias)";
 		$request = $this->con->select_all($sql);
 		if(count($request) > 0){
 			for ($c=0; $c < count($request) ; $c++) { 
@@ -19,6 +18,9 @@ trait TCategoria{
 		}
 		return $request;
 	}
+
+
+	
 
 	/* Extraer banners a tienda */
 	public function getBannersT(string $banner){

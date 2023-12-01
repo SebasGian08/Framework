@@ -25,5 +25,7 @@
 			$this->views->getView($this,"home",$data);
 		}
 
+		
+
 	}
  ?>
